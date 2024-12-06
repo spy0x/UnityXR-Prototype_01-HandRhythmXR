@@ -1,0 +1,34 @@
+{
+    "name": "InputActionsPlayer",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "20d67f46-faaa-4027-832a-be7f4da1ab28",
+            "actions": [
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "9a9bb503-5b80-4f5c-8fb6-70d64983a52b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6b2a66d3-4853-4ed8-9059-3814bc01d3c3",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
