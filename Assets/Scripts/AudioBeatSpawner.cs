@@ -114,4 +114,13 @@ public class AudioBeatSpawner : MonoBehaviour
     {
         bpm = newBpm;
     }
+    public void SetHalfBpm()
+    {
+        bpm /= 2;
+    }
+    
+    public void SetDoubleBpm()
+    {
+        bpm *= 2;
+    }
 }

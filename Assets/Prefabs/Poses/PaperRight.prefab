@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b750100d9f72442982b86412035eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.25
+  moveSpeed: 1
   moveDirection: {x: 0, y: 1, z: 0}
   activeStateSelector: {fileID: 6254292438743959536}
   meshRenderer: {fileID: 6575592490974640065}
