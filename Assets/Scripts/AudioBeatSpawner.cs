@@ -32,8 +32,7 @@ public class AudioBeatSpawner : MonoBehaviour
     [SerializeField] GameObject[] leftPosePrefabs;
     [SerializeField] GameObject[] rightPosePrefabs;
     [SerializeField] PlayableDirector songTimeline;
-
-
+    
     private EHandTurn[] handTurn = { EHandTurn.Right, EHandTurn.Left };
     private Coroutine currentCoroutine;
     private bool canSpawnBeats;
@@ -41,7 +40,7 @@ public class AudioBeatSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // if (songTimeline) PlaySong();
+       gameObject.SetActive(false);
     }
 
     public void StartCoroutineSpawnBeats()

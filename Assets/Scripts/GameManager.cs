@@ -13,6 +13,16 @@ public class GameManager : MonoBehaviour
     private bool isFingerTwoSelected;
     private void OnEnable()
     {
+        BeatSpawnerPlaceSystem.OnBeatSpawnerPlaced += SetFingerSelectors;
+    }
+
+    private void OnDisable()
+    {
+        BeatSpawnerPlaceSystem.OnBeatSpawnerPlaced -= SetFingerSelectors;
+    }
+
+    private void SetFingerSelectors()
+    {
         fingerOne.WhenSelected += OnFingerOneSelected;
         fingerTwo.WhenSelected += OnFingerTwoSelected;
         fingerThree.WhenSelected += OnFingerThreeSelected;
