@@ -52,9 +52,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3534986753340450700, guid: a988b3f4cf187324fb872df0d2c42f1c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534986753340450700, guid: a988b3f4cf187324fb872df0d2c42f1c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534986753340450700, guid: a988b3f4cf187324fb872df0d2c42f1c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 7901018741450483061, guid: a988b3f4cf187324fb872df0d2c42f1c, type: 3}
       propertyPath: m_Name
-      value: ScissorsLeft Variant
+      value: ScissorsLeft
       objectReference: {fileID: 0}
     - target: {fileID: 8364442703430449470, guid: a988b3f4cf187324fb872df0d2c42f1c, type: 3}
       propertyPath: m_LocalScale.x

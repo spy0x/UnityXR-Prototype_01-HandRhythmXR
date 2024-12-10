@@ -55,7 +55,13 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 6095946058649282836}
   leftPosePrefabs:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   rightPosePrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   songTimeline: {fileID: 0}
 --- !u!82 &7860180321341877901
@@ -172,6 +178,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: b81f25eb9b3ca3247b952503c95e4945, type: 2}
     - {fileID: 11400000, guid: 9d697ef9d41593b4e8fa6ea964482cf1, type: 2}
     - {fileID: 11400000, guid: c355c80e47bbf4445a14f02460615a74, type: 2}
+    - {fileID: 11400000, guid: 06637599b1600c140a26999598676023, type: 2}
+    - {fileID: 11400000, guid: 1289fc305ffc8cf4885ede6ba927b5f3, type: 2}
+    - {fileID: 11400000, guid: 8d68dfa22a58be04baa6fd219f29e124, type: 2}
+    - {fileID: 11400000, guid: 6dbe03cae3692f145a59a108296fa062, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -197,7 +207,7 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 72
+            m_FloatArgument: 144
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -214,6 +224,62 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3848942120065283448}
+          m_TargetAssemblyTypeName: AudioBeatSpawner, Assembly-CSharp
+          m_MethodName: SetHalfBpm
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3848942120065283448}
+          m_TargetAssemblyTypeName: AudioBeatSpawner, Assembly-CSharp
+          m_MethodName: SetDoubleBpm
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3848942120065283448}
+          m_TargetAssemblyTypeName: AudioBeatSpawner, Assembly-CSharp
+          m_MethodName: SetBpm
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 119
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3848942120065283448}
+          m_TargetAssemblyTypeName: AudioBeatSpawner, Assembly-CSharp
+          m_MethodName: SetCanSpawnBeats
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!54 &2212424900928659878
 Rigidbody:
@@ -271,7 +337,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 0.01, z: 0.02}
+  m_LocalScale: {x: 1, y: 0.05, z: 0.02}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4406312500300413661}
