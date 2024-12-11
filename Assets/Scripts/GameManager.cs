@@ -1,6 +1,8 @@
 using System;
 using Oculus.Interaction;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ActiveStateSelector fingerTwo;
     [SerializeField] private ActiveStateSelector fingerThree;
     [SerializeField] private AudioBeatSpawner audioBeatSpawner;
+    [SerializeField] UnityEvent onSongStart;
 
     private bool isFingerOneSelected;
     private bool isFingerTwoSelected;
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
+        onSongStart.Invoke();
         audioBeatSpawner.PlaySong();
     }
 }
