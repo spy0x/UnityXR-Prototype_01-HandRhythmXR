@@ -10,8 +10,11 @@ public class HandPose : MonoBehaviour
     [SerializeField] Renderer meshRenderer;
     [SerializeField] Material goodMaterial;
     [SerializeField] Material badMaterial;
+    [SerializeField] ParticleSystem destroyParticles;
+    public event Action OnHandPoseSelected;
 
-    private bool hasBeenSelected = false;
+    private bool hasBeenSelected;
+    private bool canMove = true;
     private void OnEnable()
     {
         activeStateSelector.WhenSelected += OnSelected;
@@ -50,11 +53,16 @@ public class HandPose : MonoBehaviour
         hasBeenSelected = true;
         activeStateSelector.enabled = false;
         meshRenderer.material = goodMaterial;
+        canMove = false;
+        meshRenderer.enabled = false;
+        destroyParticles.Play();
+        OnHandPoseSelected?.Invoke();
+        Destroy(gameObject, 2f);
     }
 
     void Update()
     {
-        Move();
+        if(canMove) Move();
     }
 
     private void Move()

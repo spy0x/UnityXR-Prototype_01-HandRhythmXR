@@ -32,7 +32,10 @@ public class AudioBeatSpawner : MonoBehaviour
     [SerializeField] GameObject[] leftPosePrefabs;
     [SerializeField] GameObject[] rightPosePrefabs;
     [SerializeField] PlayableDirector songTimeline;
-    
+    [SerializeField] SongTimeDisplay songTimeDisplay;
+    [SerializeField] ParticleSystem destroyParticlesRight;
+    [SerializeField] ParticleSystem destroyParticlesLeft;
+
     private EHandTurn[] handTurn = { EHandTurn.Right, EHandTurn.Left };
     private Coroutine currentCoroutine;
     private bool canSpawnBeats;
@@ -40,7 +43,7 @@ public class AudioBeatSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public void StartCoroutineSpawnBeats()
@@ -64,22 +67,45 @@ public class AudioBeatSpawner : MonoBehaviour
             int randomRightIndex = Random.Range(0, rightPosePrefabs.Length);
             if (canSpawnBeats)
             {
+                GameObject instantiatedPoseRight = null;
+                GameObject instantiatedPoseLeft = null;
                 switch (randomHandTurn)
                 {
                     case EHandTurn.Left:
-                        Instantiate(leftPosePrefabs[randomLeftIndex], leftSpawnPoint.position, leftSpawnPoint.rotation);
+                        instantiatedPoseLeft = Instantiate(leftPosePrefabs[randomLeftIndex], leftSpawnPoint.position,
+                            leftSpawnPoint.rotation);
                         break;
                     case EHandTurn.Right:
-                        Instantiate(rightPosePrefabs[randomRightIndex], rightSpawnPoint.position,
+                        instantiatedPoseRight = Instantiate(rightPosePrefabs[randomRightIndex],
+                            rightSpawnPoint.position,
                             rightSpawnPoint.rotation);
                         break;
                     case EHandTurn.Both:
-                        Instantiate(leftPosePrefabs[randomLeftIndex], leftSpawnPoint.position, leftSpawnPoint.rotation);
-                        Instantiate(rightPosePrefabs[randomRightIndex], rightSpawnPoint.position,
+                        instantiatedPoseLeft = Instantiate(leftPosePrefabs[randomLeftIndex], leftSpawnPoint.position,
+                            leftSpawnPoint.rotation);
+                        instantiatedPoseRight = Instantiate(rightPosePrefabs[randomRightIndex],
+                            rightSpawnPoint.position,
                             rightSpawnPoint.rotation);
                         break;
                 }
+
+                if (instantiatedPoseRight)
+                {
+                    if (instantiatedPoseRight.TryGetComponent(out HandPose handPoseRight))
+                    {
+                        handPoseRight.OnHandPoseSelected += () => destroyParticlesRight.Play();
+                    }
+                }
+
+                if (instantiatedPoseLeft)
+                {
+                    if (instantiatedPoseLeft.TryGetComponent(out HandPose handPoseLeft))
+                    {
+                        handPoseLeft.OnHandPoseSelected += () => destroyParticlesLeft.Play();
+                    }
+                }
             }
+
             float beatInterval = 60 / bpm;
             yield return new WaitForSeconds(beatInterval);
         }
@@ -88,6 +114,7 @@ public class AudioBeatSpawner : MonoBehaviour
     public void PlaySong()
     {
         songTimeline.Play();
+        songTimeDisplay.SetSongDuration(songTimeline);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -131,7 +158,7 @@ public class AudioBeatSpawner : MonoBehaviour
     {
         bpm *= 2;
     }
-    
+
     public void SetCanSpawnBeats(bool canSpawn)
     {
         canSpawnBeats = canSpawn;

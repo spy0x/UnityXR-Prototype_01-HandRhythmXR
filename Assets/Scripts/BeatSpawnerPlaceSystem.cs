@@ -27,9 +27,7 @@ public class BeatSpawnerPlaceSystem : MonoBehaviour
             hasPlaced = true;
             beatSpawner.gameObject.SetActive(true);
             beatSpawner.position = hit.point;
-
             beatSpawner.rotation = Quaternion.LookRotation(-rightHandTransform.position, Vector3.up);
-
             OnBeatSpawnerPlaced?.Invoke();
         }
     }
