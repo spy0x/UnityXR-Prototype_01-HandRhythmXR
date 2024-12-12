@@ -201,7 +201,7 @@ MonoBehaviour:
   serializedSurfaceGeometry: []
   textureOpacity_: 1
   edgeRenderingEnabled_: 1
-  edgeColor_: {r: 1, g: 0, b: 0, a: 1}
+  edgeColor_: {r: 1, g: 0, b: 0, a: 0.78431374}
   colorMapType: 4
 --- !u!114 &30503027
 MonoBehaviour:
