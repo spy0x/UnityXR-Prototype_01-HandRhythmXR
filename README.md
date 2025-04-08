@@ -1,5 +1,7 @@
 # 🎵 Hand Rhythm XR: Controller-Free Music Experience
 
+![Hand Rhythm GIF](/hand_rhythm.gif "Hand Rhythm GIF")
+
 ## 💡 Idea
 **Elevator Pitch:**  
 *"What if you could play rhythm games like Beat Saber or Guitar Hero - but with just your hands, in your own living space?"*  
